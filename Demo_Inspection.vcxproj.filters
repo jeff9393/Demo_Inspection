@@ -21,8 +21,17 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
-    <Filter Include="Source Files\src">
+    <Filter Include="Header Files\interface">
+      <UniqueIdentifier>{20c2b7e9-4251-4665-a1bd-16eecfcdde91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\interface">
       <UniqueIdentifier>{d99bfd7a-c3b1-4276-b2b3-aef875d06260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\abstract">
+      <UniqueIdentifier>{95384ad6-77b3-4987-a649-0b1b11216033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\abstract">
+      <UniqueIdentifier>{3bbb2481-c01d-4210-817e-a15a6bc6de02}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,10 +55,30 @@
     <ClCompile Include="src\Controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\abstract\InspectFactory.cpp">
+      <Filter>Source Files\abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="src\interface\Autofocus.cpp">
+      <Filter>Source Files\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\interface\Positioning.cpp">
+      <Filter>Source Files\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\interface\InspectMethod.cpp">
+      <Filter>Source Files\interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Controller.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\abstract\InspectFactory.h">
+      <Filter>Header Files\abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="src\interface\Modules.h">
+      <Filter>Header Files\interface</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

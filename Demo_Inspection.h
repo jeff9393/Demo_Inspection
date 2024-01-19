@@ -15,11 +15,15 @@ public:
     /* create inspection object */
     Controller* inspection = new Controller();
 
+protected:
+    /* interface for factory */
+
 private:
     Ui::Demo_InspectionClass *ui;
 
 signals:
     void TriggerInspection();
+
 private slots:
     void on_StartButton_clicked();
 };
