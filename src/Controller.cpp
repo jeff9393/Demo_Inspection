@@ -4,9 +4,23 @@ void Controller::StartInspection()
 {
 	qDebug() << "Inspection thread: " << QThread::currentThreadId();
 
-	autofocus->Process();
-	positioning->Process();
-	inspect_method->Process();
+	try
+	{
+		autofocus->Process();
+		positioning->Process();
+		inspect_method->Process();
+
+		qDebug() << "Process executed successfully.";
+	}
+	catch (const InterfaceException& e)
+	{
+		ExceptionHandler handler;
+		handler.HandleException(e);
+	}
+	catch (...)
+	{
+		qDebug() << "Caught unknown exception";
+	}
 }
 
 void Controller::UpdateFactory(int index)
@@ -21,7 +35,7 @@ void Controller::UpdateFactory(int index)
 	case 1:
 		product = InspectFactory::PRODUCT_TYPE::PRODUCT_2;
 		break;
-	default:
+	default: 
 		break;
 	}
 	DestroyFactory();

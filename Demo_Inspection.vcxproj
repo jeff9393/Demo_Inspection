@@ -91,6 +91,7 @@
   <ItemGroup>
     <ClCompile Include="src\abstract\InspectFactory.cpp" />
     <ClCompile Include="src\Controller.cpp" />
+    <ClCompile Include="src\error handler\ErrorHandler.cpp" />
     <ClCompile Include="src\interface\Autofocus.cpp" />
     <ClCompile Include="src\interface\InspectMethod.cpp" />
     <ClCompile Include="src\interface\Positioning.cpp" />
@@ -105,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\abstract\InspectFactory.h" />
+    <ClInclude Include="src\error handler\ErrorHandler.h" />
     <ClInclude Include="src\interface\Modules.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

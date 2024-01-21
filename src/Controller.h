@@ -2,6 +2,7 @@
 
 #include "interface/Modules.h"
 #include "abstract/InspectFactory.h"
+#include "error handler/ErrorHandler.h"
 #include <QMainWindow>
 #include <QObject> 
 #include <QDebug> 

@@ -33,6 +33,12 @@
     <Filter Include="Header Files\abstract">
       <UniqueIdentifier>{3bbb2481-c01d-4210-817e-a15a6bc6de02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\error_handler">
+      <UniqueIdentifier>{ef45fea1-03a6-41e3-8c4d-8b89c5390e87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\error_handler">
+      <UniqueIdentifier>{c0d6f610-9137-4e15-86ac-4b0a9fe35fd1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Demo_Inspection.qrc">
@@ -67,6 +73,9 @@
     <ClCompile Include="src\interface\InspectMethod.cpp">
       <Filter>Source Files\interface</Filter>
     </ClCompile>
+    <ClCompile Include="src\error handler\ErrorHandler.cpp">
+      <Filter>Source Files\error_handler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Controller.h">
@@ -79,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="src\interface\Modules.h">
       <Filter>Header Files\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\error handler\ErrorHandler.h">
+      <Filter>Header Files\error_handler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

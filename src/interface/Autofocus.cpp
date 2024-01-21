@@ -1,13 +1,18 @@
 #include "Modules.h"
+#include "../error handler/ErrorHandler.h"
 
-bool Autofocus_1::Process()
+void Autofocus_1::Process()
 {
 	qDebug() << "Autofocus_1::Process()";
-	return true;
+
+	bool focus_failed = true; // Error case for test
+	if (focus_failed)
+	{
+		throw MyException(AUTOFOCUS_FAIL);
+	}	
 }
 
-bool Autofocus_2::Process()
+void Autofocus_2::Process()
 {
 	qDebug() << "Autofocus_2::Process()";
-	return true;
 }
