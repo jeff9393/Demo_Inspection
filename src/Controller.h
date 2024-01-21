@@ -16,16 +16,20 @@ public:
 
 	Controller()
 	{
+		moveToThread(&controller_thread);
+		controller_thread.start();
+
 		factory = nullptr;
 		autofocus = nullptr;
 		positioning = nullptr;
 		inspect_method = nullptr;
-		moveToThread(&controller_thread);
-		controller_thread.start();
+		product = InspectFactory::PRODUCT_TYPE::PRODUCT_1;
+		ConstructFactory();
 	}
 
 	~Controller()
 	{
+		DestroyFactory();
 		controller_thread.quit();
 		controller_thread.wait();
 	}
@@ -37,6 +41,15 @@ private:
 	Positioning *positioning;
 	InspectMethod *inspect_method;
 
+	/* variables */
+	InspectFactory::PRODUCT_TYPE product;
+
+	/* function */
+	void ConstructFactory();
+	void DestroyFactory();
+
+
 public slots:
 	void StartInspection();
+	void UpdateFactory(int index);
 };

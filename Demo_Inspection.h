@@ -22,7 +22,9 @@ private:
 
 signals:
     void TriggerInspection();
+    void ChangeProduct(int);
 
 private slots:
     void on_StartButton_clicked();
+    void on_comboBox_SelectProduct_currentIndexChanged(int index);
 };
