@@ -3,7 +3,6 @@
 #include "ui_Demo_Inspection.h"
 #include "src/Controller.h"
 
-
 class Demo_Inspection : public QMainWindow
 {
     Q_OBJECT
@@ -13,7 +12,7 @@ public:
     ~Demo_Inspection();
 
     /* create inspection object */
-    Controller* inspection = new Controller();
+    Controller *inspection = new Controller();
 
 protected:
     /* interface for factory */

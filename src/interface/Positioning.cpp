@@ -2,10 +2,12 @@
 
 bool Positioning_1::Process()
 {
+	qDebug() << "Positioning_1::Process()";
 	return true;
 }
 
 bool Positioning_2::Process()
 {
+	qDebug() << "Positioning_2::Process()";
 	return true;
 }

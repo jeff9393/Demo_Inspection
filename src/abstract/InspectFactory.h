@@ -15,7 +15,7 @@ public:
 		PRODUCT_2
 	};
 
-	static InspectFactory* Create(PRODUCT_TYPE factory);
+	static InspectFactory *Create(PRODUCT_TYPE factory);
 
 	/* interface */
 	virtual Autofocus *GetAutofocus() = 0;

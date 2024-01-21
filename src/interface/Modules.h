@@ -4,14 +4,8 @@
 
 /* announcement */
 class Autofocus;
-class Autofocus_1;
-class Autofocus_2;
 class Positioning;
-class Positioning_1;
-class Positioning_2;
 class InspectMethod;
-class InspectMethod_1;
-class InspectMethod_2;
 
 class Autofocus
 {

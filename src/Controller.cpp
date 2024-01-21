@@ -6,13 +6,20 @@ void Controller::StartInspection()
 {
 	qDebug() << "Inspection thread: " << QThread::currentThreadId();
 
-	InspectFactory* factory = nullptr;
+	InspectFactory *factory = nullptr;
 	factory = InspectFactory::Create(InspectFactory::PRODUCT_1);
 
+	/* construct factory */
 	autofocus = factory->GetAutofocus();
 	positioning = factory->GetPositioning();
 	inspect_method = factory->GetInspectMethod();
 
-	/* construct factory */
+	autofocus->Process();
+	positioning->Process();
+	inspect_method->Process();
 
+	delete factory;
+	delete autofocus;
+	delete positioning;
+	delete inspect_method;
 }

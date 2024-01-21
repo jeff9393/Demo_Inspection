@@ -1,8 +1,8 @@
 #include "InspectFactory.h"
 
-InspectFactory* InspectFactory::Create(PRODUCT_TYPE product)
+InspectFactory *InspectFactory::Create(PRODUCT_TYPE product)
 {
-	InspectFactory* factory = nullptr;
+	InspectFactory *factory = nullptr;
 
 	switch (product)
 	{
