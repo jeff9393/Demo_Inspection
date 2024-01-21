@@ -1,6 +1,7 @@
 #pragma once
 
 #include "interface/Modules.h"
+#include "abstract/InspectFactory.h"
 #include <QMainWindow>
 #include <QObject> 
 #include <QDebug> 
@@ -15,6 +16,10 @@ public:
 
 	Controller()
 	{
+		factory = nullptr;
+		autofocus = nullptr;
+		positioning = nullptr;
+		inspect_method = nullptr;
 		moveToThread(&controller_thread);
 		controller_thread.start();
 	}
@@ -25,8 +30,9 @@ public:
 		controller_thread.wait();
 	}
 
-protected:
-	/* interface for factory */
+private:
+	/* factory object */
+	InspectFactory *factory;
 	Autofocus *autofocus;
 	Positioning *positioning;
 	InspectMethod *inspect_method;

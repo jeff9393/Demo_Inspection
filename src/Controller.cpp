@@ -1,19 +1,17 @@
 #include "Controller.h"
-#include "interface/Modules.h"
-#include "abstract/InspectFactory.h"
 
 void Controller::StartInspection()
 {
 	qDebug() << "Inspection thread: " << QThread::currentThreadId();
 
-	InspectFactory *factory = nullptr;
-	factory = InspectFactory::Create(InspectFactory::PRODUCT_1);
+	factory = InspectFactory::Create(InspectFactory::PRODUCT_2);
 
 	/* construct factory */
 	autofocus = factory->GetAutofocus();
 	positioning = factory->GetPositioning();
 	inspect_method = factory->GetInspectMethod();
 
+	/* do */
 	autofocus->Process();
 	positioning->Process();
 	inspect_method->Process();
