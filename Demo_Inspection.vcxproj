@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\abstract\InspectFactory.h" />
+    <ClInclude Include="src\data\MyData.h" />
     <ClInclude Include="src\error handler\ErrorHandler.h" />
     <ClInclude Include="src\interface\Modules.h" />
   </ItemGroup>

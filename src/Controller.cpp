@@ -6,9 +6,13 @@ void Controller::StartInspection()
 
 	try
 	{
+		/* process */
 		autofocus->Process();
 		positioning->Process();
 		inspect_method->Process();
+
+		/* update result to UI */
+		emit NotifyResult(inspect_method->GetResult());
 
 		qDebug() << "Process executed successfully.";
 	}
@@ -16,6 +20,7 @@ void Controller::StartInspection()
 	{
 		ExceptionHandler handler;
 		handler.HandleException(e);
+		emit NotifyResult(false);
 	}
 	catch (...)
 	{
@@ -44,10 +49,19 @@ void Controller::UpdateFactory(int index)
 
 void Controller::ConstructFactory()
 {
+	/* Create factory */
 	factory = InspectFactory::Create(product);
+
+	/* get object by factory */
 	autofocus = factory->GetAutofocus();
 	positioning = factory->GetPositioning();
 	inspect_method = factory->GetInspectMethod();
+
+	/* Dependency injection */
+	data = new DependencyData();
+	autofocus->SetDependency(data);
+	positioning->SetDependency(data);
+	inspect_method->SetDependency(data);
 }
 
 void Controller::DestroyFactory()
@@ -56,4 +70,5 @@ void Controller::DestroyFactory()
 	delete autofocus;
 	delete positioning;
 	delete inspect_method;
+	delete data;
 }

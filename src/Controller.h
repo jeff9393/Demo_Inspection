@@ -24,6 +24,7 @@ public:
 		autofocus = nullptr;
 		positioning = nullptr;
 		inspect_method = nullptr;
+		data = nullptr;
 		product = InspectFactory::PRODUCT_TYPE::PRODUCT_1;
 		ConstructFactory();
 	}
@@ -44,11 +45,14 @@ private:
 
 	/* variables */
 	InspectFactory::PRODUCT_TYPE product;
+	DependencyData *data;
 
 	/* function */
 	void ConstructFactory();
 	void DestroyFactory();
 
+signals:
+	void NotifyResult(bool result);
 
 public slots:
 	void StartInspection();

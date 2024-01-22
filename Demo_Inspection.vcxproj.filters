@@ -39,6 +39,9 @@
     <Filter Include="Source Files\error_handler">
       <UniqueIdentifier>{c0d6f610-9137-4e15-86ac-4b0a9fe35fd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\data">
+      <UniqueIdentifier>{bc1a1595-a334-4670-8e1a-5d5db9530cb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Demo_Inspection.qrc">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="src\error handler\ErrorHandler.h">
       <Filter>Header Files\error_handler</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data\MyData.h">
+      <Filter>Header Files\data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

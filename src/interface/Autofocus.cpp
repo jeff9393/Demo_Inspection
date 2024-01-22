@@ -5,8 +5,9 @@ void Autofocus_1::Process()
 {
 	qDebug() << "Autofocus_1::Process()";
 
-	bool focus_failed = true; // Error case for test
-	if (focus_failed)
+	data->src_image = "GetImage";
+
+	if (data->src_image != "GetImage")
 	{
 		throw MyException(AUTOFOCUS_FAIL);
 	}	
@@ -15,4 +16,11 @@ void Autofocus_1::Process()
 void Autofocus_2::Process()
 {
 	qDebug() << "Autofocus_2::Process()";
+
+	data->src_image = "Failure to focus";
+
+	if (data->src_image != "GetImage")
+	{
+		throw MyException(AUTOFOCUS_FAIL);
+	}
 }

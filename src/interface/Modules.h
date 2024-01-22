@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../data/MyData.h"
 #include <QDebug>
 
 /* announcement */
@@ -12,10 +13,14 @@ class Autofocus
 public:
 	Autofocus()
 	{
-
+		data = nullptr;
 	}
 
 	virtual void Process() = 0;
+	void SetDependency(DependencyData *dep) { data = dep; }
+
+protected:
+	DependencyData *data;
 };
 
 class Autofocus_1 : public Autofocus
@@ -45,10 +50,14 @@ class Positioning
 public:
 	Positioning()
 	{
-
+		data = nullptr;
 	}
 
 	virtual void Process() = 0;
+	void SetDependency(DependencyData* dep) { data = dep; }
+
+protected:
+	DependencyData* data;
 };
 
 class Positioning_1 : public Positioning
@@ -78,10 +87,15 @@ class InspectMethod
 public:
 	InspectMethod()
 	{
-
+		data = nullptr;
 	}
 
 	virtual void Process() = 0;
+	void SetDependency(DependencyData* dep) { data = dep; }
+	bool GetResult() { return data->inspect_pass; }
+
+protected:
+	DependencyData* data;
 };
 
 class InspectMethod_1 : public InspectMethod
